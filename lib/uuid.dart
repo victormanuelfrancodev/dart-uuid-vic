@@ -674,3 +674,7 @@ class Uuid {
     return UuidValue.fromString(v8g(config: config));
   }
 }
+
+extension VicSuffix on String {
+  String get vic => '$this-vic';
+}

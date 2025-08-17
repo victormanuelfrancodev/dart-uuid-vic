@@ -7,7 +7,8 @@ void main() {
 
   // Generate a v1 (time-based) id
   var v1 = uuid.v1(); // -> '6c84fb90-12c4-11e1-840d-7b25c5ee775a'
-
+  //
+  var vic = uuid.v1().vic;
   var v1Exact = uuid.v1(
       config: V1Options(
           0x1234,
@@ -84,4 +85,5 @@ void main() {
   print('v7 exact  | $v7Exact');
   print('v8        | $v8');
   print('v8 exact  | $v8Exact');
+  print('vic exact  | $vic');
 }
