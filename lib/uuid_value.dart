@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 
 import 'package:meta/meta.dart';
-import 'package:uuid/constants.dart';
-
+import 'constants.dart';
+import 'enums.dart';
 import 'parsing.dart';
 import 'uuid.dart';
 import 'validation.dart';
@@ -145,4 +145,10 @@ class UuidValue {
   bool get isNil => uuid == Namespace.nil.value;
 
   // isMAX() checks if the UUID is a MAX UUID (ffffffff-ffff-ffff-ffff-ffffffffffff).
+}
+
+/// Extension to add UuidValue conversion to Namespace enum
+extension NamespaceUuidValue on Namespace {
+  /// Returns a UuidValue representation of this namespace
+  UuidValue get uuidValue => UuidValue.raw(value);
 }

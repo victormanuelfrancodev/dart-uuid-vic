@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 import 'dart:math';
-import 'package:uuid/data.dart';
+import 'data.dart';
 
 import 'parsing.dart';
 

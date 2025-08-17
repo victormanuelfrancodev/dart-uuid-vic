@@ -7,9 +7,9 @@ library;
 
 import 'dart:typed_data';
 
-import 'package:uuid/data.dart';
-import 'package:uuid/rng.dart';
-import 'package:uuid/validation.dart';
+import 'data.dart';
+import 'rng.dart';
+import 'validation.dart';
 
 import 'enums.dart';
 import 'parsing.dart';

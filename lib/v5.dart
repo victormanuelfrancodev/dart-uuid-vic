@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:uuid/data.dart';
+import 'data.dart';
 
 import 'dart:convert';
 import 'enums.dart';

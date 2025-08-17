@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:uuid/constants.dart';
-import 'package:uuid/uuid.dart';
+import 'constants.dart';
+import 'parsing.dart';
 
 /// The options for UUID Validation strictness
 enum ValidationMode { nonStrict, strictRFC4122 }
@@ -37,19 +37,8 @@ enum Namespace {
 
   final String value;
 
-  UuidValue get uuidValue => value == InternalConstants.zNIL
-      ? const UuidValue.raw(InternalConstants.zNIL)
-      : value == InternalConstants.zDNS
-          ? const UuidValue.raw(InternalConstants.zDNS)
-          : value == InternalConstants.zURL
-              ? const UuidValue.raw(InternalConstants.zURL)
-              : value == InternalConstants.zOID
-                  ? const UuidValue.raw(InternalConstants.zOID)
-                  : value == InternalConstants.zX500
-                      ? const UuidValue.raw(InternalConstants.zX500)
-                      : value == InternalConstants.zMAX
-                          ? const UuidValue.raw(InternalConstants.zMAX)
-                          : const UuidValue.raw(InternalConstants.zNIL);
+  /// Returns the string value of this namespace UUID
+  String get uuidString => value;
 
-  List<int> get bytes => Uuid.parse(value, validate: false);
+  List<int> get bytes => UuidParsing.parse(value, validate: false);
 }
